@@ -108,8 +108,6 @@ def SHA256(message: int):
         digest = digest + hash_list[h]
     return hex(digest)
 
-print(SHA256((pad_message('heluu'))))
-
 
 
 
