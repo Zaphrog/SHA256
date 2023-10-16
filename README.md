@@ -1,6 +1,5 @@
 # SHA256
-A Secure Hash Algorithm 256
-The SHA256 creates a unique, 64 bit long hash for any input. 
+The SHA256 creates a unique, 256 bit long hash for any input. 
 
 ### Building block functions:
 
@@ -14,6 +13,7 @@ Shifts the bits n positions to the right, moving the last ones to the front, as 
 Choice:
 Takes in three numbers (e,f,g). For each bit in the arguments, if e ==1, it adds the bit in f to the result , else it adds the bit in g.
 ```
+# example: ch(157,405,433) ---> 437 
 # bin(157) = 0b010011101
 # bin(405) = 0b110010101
 # bin(433) = 0b110110001
@@ -46,7 +46,7 @@ For example:
 ```
 The first constant is 0x6a09e667, which corresponds to the square root of 2.
 2**(1/2.)= 1.41421356237....
-To convert that to a hex fraction, we take the only the irrational part (0.41421356237...)
+To convert that to a hex fraction, we take the irrational part (0.41421356237...)
 (0.41421356237...)*16 = 6.62741699797...    the int part of the result is 6, hex(6) = 6
 We take the new irrational part and repeat the process
 (0.62741699797...)*16 = 10.0386719675...    int part is 10, hex(10) = a
@@ -60,12 +60,12 @@ The algorithm starts by splitting the message into chunks of 512 bits. It will l
 Then it creates a temporary hash array (length 8) and sets its initial values to the first group of constants. 
 For each word in the schedule, it creates two temporary words using the corresponding constant in k, values in temp hash and the basic functions. 
 After the words are created, it shifts every temporary hash one position down (and modifies the 5th hash using a temporary word), and sets the first item to the sum of the two temporary words. 
-When the loop is done, the eight values in temporary hash have been completely modified many times. The algorithm then adds loops through the hashes one last time, adding the original values to each of them. It saves that array as the initial values of the temporary hash array for the next chunk.
+When the loop is done, the eight values in temporary hash have been completely modified many times. The algorithm then loops through the hashes one last time, adding the original values to each of them. It saves that array as the initial values of the temporary hash array for the next chunk.
 After looping through every chunk, the algorithm returns the concatenation of the values in the last hash_array.
 
 
 ### Documentation:
 To hash a message (string):
 ```
-hash = SHA256(pad_message(print(SHA256(pad_message(message)))
+hash = SHA256(pad_message(message))
 ```
