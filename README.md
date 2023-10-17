@@ -8,7 +8,7 @@ Shifts the bits n positions to the right, moving the last ones to the front, as 
 ```
 # example: rr(255,4) ---> 4160749575
 # bin(255) =        0b00000000000000000000000011111111
-# bin(4160749575) = 0b11111000000000000000000000000111
+# bin(4160749575) = 0b11110000000000000000000000001111
 ```
 Choice:
 Takes in three numbers (e,f,g). For each bit in the arguments, if e ==1, it adds the bit in f to the result , else it adds the bit in g.
