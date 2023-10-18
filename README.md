@@ -41,7 +41,7 @@ The rest of the sigma functions are just variations on this idea.
 We also need to pad the message so its length is a multiple of 512 bits. To do so, the function appends a 1 to the end of the message, appends enough zeroes to reach the nearest multiple of 512-64 and fills those last 64 bits with the length of the message. 
 
 ### Hashing:
-The first group of constants are the hexadecimal fractions of the square roots of the first 8 prime numbers, which are irrational. 
+The first group of constants are the hexadecimal fractions of the square roots of the first 8 prime numbers, which are irrational. To convert that to a hex fraction, we take the irrational part of the number, multiply it by 16, take the hexadecimal of the integer part of the result and repeat the process until we have 8 digits. 
 For example:
 ```
 The first constant is 0x6a09e667, which corresponds to the square root of 2.
