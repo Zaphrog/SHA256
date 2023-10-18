@@ -11,7 +11,7 @@ Shifts the bits n positions to the right, moving the last ones to the front, as 
 # bin(4160749575) = 0b11110000000000000000000000001111
 ```
 Choice:
-Takes in three numbers (e,f,g). For each bit in the arguments, if e ==1, it adds the bit in f to the result , else it adds the bit in g.
+Takes in three numbers (e,f,g). For each bit in the arguments, if e ==1, it adds the bit in f to the result, else it adds the bit in g.
 ```
 # example: ch(157,405,433) ---> 437 
 # bin(157) = 0b010011101
